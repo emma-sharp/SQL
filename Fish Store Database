@@ -1,0 +1,26 @@
+--Create a database for a pet store selling fish. 
+
+CREATE TABLE fish (id INTEGER PRIMARY KEY, name TEXT, kind TEXT, color TEXT, price NUMERIC);
+
+INSERT INTO fish VALUES
+(1, "Mr. Flips", "beta", "purple", 2.50),
+(2, "Fred", "goldfish", "orange", 3.75),
+(3, "Nemo", "beta", "white", 2.50),
+(4, "Angel", "angelfish", "black", 5.99),
+(5, "Bubbles", "butterflyfish", "blue", 5.00),
+(6, "Speedy", "beta", "red", 2.50),
+(7, "Shakira", "goldfish", "yellow", 3.75),
+(8, "Harry", "cowfish", "blue", 9.99),
+(9, "Henry", "eel", "gray", 25.00),
+(10, "Michael", "pufferfish", "white", 10.00),
+(11, "Princess", "beta", "pink", 2.50),
+(12, "Precious", "eel", "black", 25.00),
+(13, "Oswald", "cowfish", "yellow", 9.99),
+(14, "Steak", "goatfish", "gray", 4.50),
+(15, "Cutie", "eel", "black", 25.00);
+
+--Display the database ordered by price from least to most expensive. 
+SELECT * FROM fish ORDER BY price;
+
+--Display all of the beta fish being sold. 
+SELECT * FROM fish WHERE kind = "beta";

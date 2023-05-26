@@ -1,4 +1,4 @@
---Create a table for the top 31 countries with the highest populations including other related details
+--Create a table for the top 31 countries with the highest populations including other related details.
 
 CREATE TABLE countries(
    name                    TEXT PRIMARY KEY,
@@ -47,13 +47,13 @@ INSERT INTO countries(name,population,percent_one_year_change,population_change,
 
 SELECT * FROM countries;
 
---Find the average median age across all of the countries' populations
+--Find the average median age across all of the countries' populations.
 SELECT ROUND(AVG(median_age)) AS avg_median_age from countries;
 
---Find which countries have a negative population change or a negative net migration to compare their affects on each other 
+--Find which countries have a negative population change or a negative net migration to compare their affects on each other. 
 SELECT name, population, percent_one_year_change, population_change, net_migrants FROM countries WHERE population_change < 0 OR net_migrants < 0; 
 
---Group the countries by whether they are at, above, or below the global replacement fertility rate of 2.1
+--Group the countries by whether they are at, above, or below the global replacement fertility rate of 2.1.
 SELECT name, fertility_rate,
     CASE 
         WHEN fertility_rate < 2.1 THEN "less than death rate"
@@ -63,7 +63,7 @@ SELECT name, fertility_rate,
 FROM countries
 ORDER BY fertility_rate;
 
---Find which continents the most populated countries are located in 
+--Find which continents the most populated countries are located in. 
 SELECT COUNT(*),
     CASE
         WHEN name = "China" THEN "Asia"
